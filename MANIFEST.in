@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include jmkfood *.css
+recursive-include jmkfood *.csv
+recursive-include jmkfood *.html
+recursive-include jmkfood *.ico
+recursive-include jmkfood *.js
+recursive-include jmkfood *.json
+recursive-include jmkfood *.md
+recursive-include jmkfood *.png
+recursive-include jmkfood *.py
+recursive-include jmkfood *.svg
+recursive-include jmkfood *.txt
+recursive-exclude jmkfood *.pyc
