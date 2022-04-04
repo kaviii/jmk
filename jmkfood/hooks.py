@@ -104,13 +104,14 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Sales Invoice": {
+		"autoname": "jmkfood.utils.autoname_sales_invoice"
+	},
+    "Customer": {
+        "after_insert": "jmkfood.utils.after_insert_customer"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
