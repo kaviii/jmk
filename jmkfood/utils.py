@@ -16,7 +16,8 @@ def customer_pricing(docname):
     for item in item_price_list:
         price = frappe.get_doc('Item Price', item.name)
         new_doc = frappe.copy_doc(price)
-        new_doc.name = None
-        new_doc.customer = docname
-        new_doc.valid_from = getdate()
-        new_doc.insert()
+        new_doc.update({
+            'customer': docname,
+            'valid_from': getdate()
+        })
+        new_doc.save()
