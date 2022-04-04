@@ -9,7 +9,7 @@ def autoname_sales_invoice(doc, method=None):
     doc.name = make_autoname(doc.naming_series, 'Sales Invoice', doc)
 
 def after_insert_customer(doc, method=None):
-    frappe.enqueue("jmkfood.utils.customer_pricing", {'docname': doc.name}, queue='default')
+    frappe.enqueue(method=customer_pricing, queue='default', docname=doc.name)
 
 def customer_pricing(docname):
     item_price_list = frappe.get_all('Item Price', filters={'selling': 1, 'customer': ''})
