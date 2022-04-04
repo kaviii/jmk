@@ -109,7 +109,7 @@ doc_events = {
 		"autoname": "jmkfood.utils.autoname_sales_invoice"
 	},
     "Customer": {
-        "after_insert": "jmkfood.utils.after_insert_customer"
+        "on_update": "jmkfood.utils.on_update_customer"
     }
 }
 
