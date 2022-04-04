@@ -12,7 +12,10 @@ def after_insert_customer(doc, method=None):
     frappe.enqueue(method=customer_pricing, queue='default', docname=doc.name)
 
 def customer_pricing(docname):
+    print('-----------------------------------------------')
+    print(docname)
     item_price_list = frappe.get_all('Item Price', filters={'selling': 1, 'customer': ''})
+    print(len(item_price_list))
     for item in item_price_list:
         price = frappe.get_doc('Item Price', item.name)
         new_doc = frappe.copy_doc(price)
